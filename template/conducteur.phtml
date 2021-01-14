@@ -1,0 +1,50 @@
+<div class="container-fluid">
+    <div class="container">
+        <?php if(!empty($flashMessages)) :?>
+            <?php foreach ($flashMessages as $Message) :?>
+                <p class="alert alert-success mt-3"><?=$Message;?></p>
+            <?php endforeach;?>
+        <?php endif;?>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id_conducteur</th>
+                            <th scope="col">prénom</th>
+                            <th scope="col">nom</th>
+                            <th scope="col" class="text-center">modification</th>
+                            <th scope="col" class="text-center">suppréssion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($conducteurs as $conducteur): ?>
+                            <tr>
+                                <th scope="row"><?=$conducteur['id_conducteur'];?></th>
+                                <td><?=$conducteur['prenom'];?></td>
+                                <td><?=$conducteur['nom'];?></td>
+                                <td class="text-center"><a href="/conducteur/edit?id=<?=$conducteur['id_conducteur'];?>" class="btn btn-outline-primary"><i class="fas fa-pen"></i></a></td>
+                                <td class="text-center"><a href="/conducteur/delete?id=<?=$conducteur['id_conducteur'];?>" class="btn btn-outline-danger"><i class="fas fa-times"></i></a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                 <form method="post" action="/">
+                    <div class="mb-3">
+                        <label for="Prénom" class="form-label font-weight-bold">Prénom</label>
+                        <input type="text" class="form-control" id="Prénom" name="Prénom" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Nom" class="form-label font-weight-bold">Nom</label>
+                        <input type="text" class="form-control" id="Nom" name="Nom" required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" name="add">Ajouter un conducteur</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

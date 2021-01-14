@@ -1,0 +1,62 @@
+<div class="container-fluid">
+    <div class="container">
+    <?php if(!empty($flashMessages)) :?>
+            <?php foreach ($flashMessages as $Message) :?>
+                <p class="alert alert-success mt-3"><?=$Message;?></p>
+            <?php endforeach;?>
+        <?php endif;?>
+        <div class="row">
+            <div class="col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id_véhicule</th>
+                            <th scope="col">marque</th>
+                            <th scope="col">modele</th>
+                            <th scope="col">couleur</th>
+                            <th scope="col">immatriculation</th>
+                            <th scope="col" class="text-center">modification</th>
+                            <th scope="col" class="text-center">suppréssion</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($vehicules as $vehicule): ?>
+                            <tr>
+                                <th scope="row"><?=$vehicule['id_vehicule'];?></th>
+                                <td><?=$vehicule['marque'];?></td>
+                                <td><?=$vehicule['modele'];?></td>
+                                <td><?=$vehicule['couleur'];?></td>
+                                <td><?=$vehicule['immatriculation'];?></td>
+                                <td class="text-center"><a href="/vehicule/edit?id=<?=$vehicule['id_vehicule'];?>" class="btn btn-outline-primary"><i class="fas fa-pen"></i></a></td>
+                                <td class="text-center"><a href="/vehicule/delete?id=<?=$vehicule['id_vehicule'];?>" class="btn btn-outline-danger"><i class="fas fa-times"></i></a></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                 <form method="post" action="">
+                    <div class="mb-3">
+                        <label for="Marque" class="form-label font-weight-bold">Marque</label>
+                        <input type="text" class="form-control" id="Marqu" name="Marque" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Modèle" class="form-label font-weight-bold">Modèle</label>
+                        <input type="text" class="form-control" id="Modèle" name="Modèle" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Couleur" class="form-label font-weight-bold">Couleur</label>
+                        <input type="text" class="form-control" id="Couleur" name="Couleur" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Immatriculation" class="form-label font-weight-bold">Immatriculation</label>
+                        <input type="text" class="form-control" id="Immatriculation" name="Immatriculation" required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" name="add">Ajouter un véhicule</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

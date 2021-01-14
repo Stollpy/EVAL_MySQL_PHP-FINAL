@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row mt-3">
+            <div class="col-12">
+            <form method="post" action="">
+                    <div class="mb-3">
+                        <label for="Marque" class="form-label font-weight-bold">Marque</label>
+                        <input type="text" class="form-control" id="Marque" name="Marque" value="<?=$Vehicule['marque'];?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Modèle" class="form-label font-weight-bold">Modèle</label>
+                        <input type="text" class="form-control" id="Modèle" name="Modèle" value="<?=$Vehicule['modele'];?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Couleur" class="form-label font-weight-bold">Couleur</label>
+                        <input type="text" class="form-control" id="Couleur" name="Couleur" value="<?=$Vehicule['couleur'];?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Immatriculation" class="form-label font-weight-bold">Immatriculation</label>
+                        <input type="text" class="form-control" id="Immatriculation" name="Immatriculation" value="<?=$Vehicule['immatriculation'];?>">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" name="add">Mettre à jour la fiche du véhicule</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

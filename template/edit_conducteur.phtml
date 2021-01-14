@@ -1,0 +1,19 @@
+<div class="container-fluid">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+            <form method="post" action="">
+                    <div class="mb-3">
+                        <label for="Prénom" class="form-label font-weight-bold">Prénom</label>
+                        <input type="text" class="form-control" id="Prénom" name="Prénom" value="<?=$Conducteur['prenom'];?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Nom" class="form-label font-weight-bold">Nom</label>
+                        <input type="text" class="form-control" id="Nom" name="Nom" value="<?=$Conducteur['nom'];?>">
+                    </div>
+                    <button type="submit" class="btn btn-outline-primary" name="add">Mettre à jour le conducteur</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
