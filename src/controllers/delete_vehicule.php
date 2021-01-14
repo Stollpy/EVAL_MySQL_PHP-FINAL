@@ -11,5 +11,5 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
     $flashbag->addFlashMessage('Veéicule supprimé de la liste !');
     header('Location: /vehicule' );
 }else{
-        return "ID NON RECONNU";
+        header('Location: /404');
     }

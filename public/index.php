@@ -21,6 +21,7 @@ $route = [
     '/association/delete' => 'delete_association.php',
     '/association/edit' => 'edit_association.php',
     '/rendu' => 'rendu.php',
+    '/404' => '404.php'
 
 ];
 

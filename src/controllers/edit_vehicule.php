@@ -26,6 +26,8 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
         }
     }
 
+}else{
+    header('Location: /404');
 }
 
 render('edit_vehicule', [

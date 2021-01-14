@@ -12,7 +12,7 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
     header('Location: /' );
 
 }else{
-    return "ID NON RECONNU";
+    header('Location: /404');
 }
 
 

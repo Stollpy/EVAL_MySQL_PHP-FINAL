@@ -13,5 +13,5 @@ if(!empty($_GET['id']) && isset($_GET['id'])){
     header('Location: /association' );
 
 }else{
-    return "ID NON RECONNU";
+    header('Location: /404');
 }
