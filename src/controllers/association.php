@@ -25,10 +25,11 @@ if(isset($_POST['add'])){
     }
 }
 
-
+$flashMessages = (new FlashBag())->FetchAllFlashMessages();
 
 render('association', [
     'Associations' => $Associations,
     'Conducteurs' => $Conducteurs,
-    'Vehicules' => $Vehicules
+    'Vehicules' => $Vehicules,
+    'flashMessages' => $flashMessages
 ]);

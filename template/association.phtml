@@ -1,5 +1,10 @@
 <div class="container-fluid">
     <div class="container">
+    <?php if(!empty($flashMessages)) :?>
+            <?php foreach ($flashMessages as $Message) :?>
+                <p class="alert alert-success mt-3"><?=$Message;?></p>
+            <?php endforeach;?>
+        <?php endif;?>
         <div class="row">
             <div class="col-12">
                 <table class="table">
@@ -46,8 +51,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td class="text-center"><a href="/assos/edit?id=<?=$assos['id_vehicule'];?>" class="btn btn-outline-primary"><i class="fas fa-pen"></i></a></td>
-                                <td class="text-center"><a href="/assos/delete?id=<?=$assos['id_vehicule'];?>" class="btn btn-outline-danger"><i class="fas fa-times"></i></a></td>
+                                <td class="text-center"><a href="/association/edit?id=<?=$assos['id_association'];?>" class="btn btn-outline-primary"><i class="fas fa-pen"></i></a></td>
+                                <td class="text-center"><a href="/association/delete?id=<?=$assos['id_association'];?>" class="btn btn-outline-danger"><i class="fas fa-times"></i></a></td>
                             </tr>
                         <?php endforeach; ?>
                      </tbody>

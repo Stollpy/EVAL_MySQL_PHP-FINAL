@@ -18,6 +18,7 @@ $route = [
     '/vehicule/delete' => 'delete_vehicule.php',
     '/vehicule/edit' => 'edit_vehicule.php',
     '/association' => 'association.php',
+    '/association/delete' => 'delete_association.php',
 
 ];
 
