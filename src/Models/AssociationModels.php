@@ -53,9 +53,11 @@ class AssociationModels extends AbstractModel{
     **************************************************/
 
     public function getAssociationById(int $id){
-        $sql='SELECT * 
-        FROM association_vehicule_conducteur
-        WHERE id_association = ?';
+        $sql = "SELECT *, conducteur.prenom, conducteur.nom, vehicule.marque, vehicule.modele
+        FROM association_vehicule_conducteur AS assos
+        INNER JOIN conducteur ON assos.id_conducteur = conducteur.id_conducteur
+        INNER JOIN vehicule ON assos.id_véhicule = vehicule.id_vehicule
+        WHERE id_association = ?";
 
         return $this->database->selectOne($sql,[$id]);
     }
@@ -67,7 +69,7 @@ class AssociationModels extends AbstractModel{
     public function editAssociation(int $idVehicule, int $idConducteur, int $id){
 
         $sql ='UPDATE association_vehicule_conducteur
-        SET id_vehicule = ?, id_conducteur = ?
+        SET id_véhicule = ?, id_conducteur = ?
         WHERE id_association = ?';
 
         return $this->database->prepareAndExecuteQuery($sql,[$idVehicule, $idConducteur, $id]);
