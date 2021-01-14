@@ -20,7 +20,7 @@ $route = [
     '/association' => 'association.php',
     '/association/delete' => 'delete_association.php',
     '/association/edit' => 'edit_association.php',
-    '/number' => 'number.php',
+    '/rendu' => 'rendu.php',
 
 ];
 

@@ -15,7 +15,7 @@ $NbVehicule = count($Vehicules);
 $NbAssociations = count($Associations);
 
 
-render('number', [
+render('rendu', [
     'NbConducteur' => $NbConducteur,
     'NbVehicule' => $NbVehicule,
     'NbAssociations' => $NbAssociations
