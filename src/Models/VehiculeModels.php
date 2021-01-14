@@ -68,4 +68,34 @@ class VehiculeModels extends AbstractModel{
 
         return $this->database->prepareAndExecuteQuery($sql,[$marque, $modele, $couleur, $imma, $id]);
     }
+
+    /*****************************************************
+    *****  Sélectionner les véhicules sans conducteur *****
+    *******************************************************/
+
+    public function getVehiculeNot(){
+        $sql =  "SELECT * FROM vehicule
+                LEFT JOIN association_vehicule_conducteur 
+                ON vehicule.id_vehicule = association_vehicule_conducteur.id_véhicule
+               WHERE id_conducteur IS NULL";
+
+        return $this->database->selectAll($sql);
+    }
+
+     /*****************************************************
+    *****  Sélectionner les véhicules conduit par Phillipe *****
+    *******************************************************/
+
+    public function getVehiculePhillipe(){
+        $sql =  "SELECT * FROM vehicule
+                LEFT JOIN association_vehicule_conducteur 
+                ON vehicule.id_vehicule = association_vehicule_conducteur.id_véhicule
+               WHERE id_conducteur = 3";
+
+        return $this->database->selectAll($sql);
+    }
+
+    
+
+    
 }

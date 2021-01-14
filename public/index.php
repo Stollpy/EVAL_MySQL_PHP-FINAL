@@ -30,6 +30,6 @@ if(array_key_exists($path, $route)){
 }
 else{
     http_response_code(404);
-
-    //render('404', ['pageTitle'=>'Erreur 404 : page non trouvé']);
+    render('404', []);
+    
 }

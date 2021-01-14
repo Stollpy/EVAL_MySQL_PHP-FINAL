@@ -1,5 +1,7 @@
 <div class="container-fluid">
     <div class="container">
+
+    <!-- Affiche du nombre de conducteur, véhicule et association -->
         <div class="row mt-3">
             <div class="col-12">
             <div class="row">
@@ -16,7 +18,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title"><?=$NbVehicule?></h5>
-                                <p class="card-text">Vous avez <?=$NbVehicule?> de véhicules.</p>
+                                <p class="card-text">Vous avez <?=$NbVehicule?> véhicules.</p>
                                 <a href="/vehicule" class="btn btn-outline-primary">Aller voir</a>
                             </div>
                         </div>
@@ -31,6 +33,104 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <h1>Véhicule sans voiture</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id_véhicule</th>
+                            <th scope="col">marque</th>
+                            <th scope="col">modele</th>
+                            <th scope="col">couleur</th>
+                            <th scope="col">immatriculation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($VéhiculeNots as $VéhiculeNot): ?>
+                            <tr>
+                                <th scope="row"><?=$VéhiculeNot['id_vehicule'];?></th>
+                                <td><?=$VéhiculeNot['marque'];?></td>
+                                <td><?=$VéhiculeNot['modele'];?></td>
+                                <td><?=$VéhiculeNot['couleur'];?></td>
+                                <td><?=$VéhiculeNot['immatriculation'];?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+            <h1>Conducteur sans voiture</h1>
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">prénom</th>
+                            <th scope="col">nom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($ConducteurNots as $ConducteurNot): ?>
+                            <tr>
+                                <td><?=$ConducteurNot['prenom'];?></td>
+                                <td><?=$ConducteurNot['nom'];?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12">
+            <h1>Véhicule de Phillipes</h1>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">id_véhicule</th>
+                            <th scope="col">marque</th>
+                            <th scope="col">modele</th>
+                            <th scope="col">couleur</th>
+                            <th scope="col">immatriculation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($VéhiculesPhillipes as $VéhiculesPhillipe): ?>
+                            <tr>
+                                <th scope="row"><?=$VéhiculesPhillipe['id_vehicule'];?></th>
+                                <td><?=$VéhiculesPhillipe['marque'];?></td>
+                                <td><?=$VéhiculesPhillipe['modele'];?></td>
+                                <td><?=$VéhiculesPhillipe['couleur'];?></td>
+                                <td><?=$VéhiculesPhillipe['immatriculation'];?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+            <h1>All Conducteur même sans véhicule</h1>
+            <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Véhicule</th>
+                            <th scope="col">prénom</th>
+                            <th scope="col">nom</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach($AllConducteur as $AllConducteurs): ?>
+                            <tr>
+                                <td><?=$AllConducteurs['id_véhicule'];?></td>
+                                <td><?=$AllConducteurs['prenom'];?></td>
+                                <td><?=$AllConducteurs['nom'];?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                     </tbody>
+                </table>
             </div>
         </div>
     </div>

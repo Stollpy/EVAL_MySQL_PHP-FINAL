@@ -69,4 +69,30 @@ class ConducteurModels extends AbstractModel{
 
         return $this->database->prepareAndExecuteQuery($sql,[$firstname, $lastname, $id]);
     }
+
+    /*****************************************************
+    *****  Sélectionner les conducteur sans véhicules *****
+    *******************************************************/
+
+    public function getConducteurNot(){
+        $sql =  "SELECT * FROM conducteur
+                LEFT JOIN association_vehicule_conducteur 
+                ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur
+               WHERE id_véhicule IS NULL";
+
+        return $this->database->selectAll($sql);
+    }
+
+    /*****************************************************
+    *****  Sélectionner les conducteur sans véhicules *****
+    *******************************************************/
+
+    public function getConducteurAsso(){
+        $sql =  "SELECT * FROM conducteur
+                LEFT JOIN association_vehicule_conducteur 
+                ON conducteur.id_conducteur = association_vehicule_conducteur.id_conducteur";
+
+        return $this->database->selectAll($sql);
+    }
+    
 }
